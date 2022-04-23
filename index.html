@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta lang="en_US">
+    <meta charset="UTF-8">
+    <meta name="description" content="Freecodecamp Poject Certification">
+    <meta name="author" content="Maikel Iriarte">
+    <meta name="keywords" content="Html, Css, Javasript">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link href="./index.css" rel="stylesheet">
+    <title>Documentation Page Project</title>
+    <script src="https://kit.fontawesome.com/3fb55c09cc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div id="logo">
+            <i class="fa-brands fa-wolf-pack-battalion"></i>
+            <h1>MikeDocs</h1>
+        </div>
+
+        <div id="social-header">
+            <a href="https://www.facebook.com/maikel.iriarte.5/" target="_blank"><i
+                    class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.freecodecamp.org/Mike01" target="_blank"><i
+                    class="fa-brands fa-free-code-camp"></i></a>
+        </div>
+    </header>
+
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i id="list" class="fa-solid fa-list"></i>
+        <i id="cancel" class="fa-solid fa-square-xmark"></i>
+    </label>
+
+    <section id="sidebar">
+        <ul>
+            <li><a onclick="handleCloseNav()" href="#INTRODUCTION_TO_RECURSION">Introduction</a></li>
+            <li><a onclick="handleCloseNav()" href="#RECURSIVE_FUNCTION_CALL">Recursive function</a></li>
+            <li><a onclick="handleCloseNav()" href="#STACK_LIMITATION">Stack size</a></li>
+            <li><a onclick="handleCloseNav()" href="#RECURSIVE_FUNCTIONS_AND_ALGORITHNS">Functions and algorithms</a></li>
+            <li><a onclick="handleCloseNav()" href="#BASE_CASE">Base case</a></li>
+            <li><a onclick="handleCloseNav()" href="#SINGLE_AND_MULTIPLE_RECURSION">Single/multiple recursion</a></li>
+            <li><a onclick="handleCloseNav()" href="#INDIRECT_RECURSION">Indirect Recursion</a></li>
+            <li><a onclick="handleCloseNav()" href="#ANONYMOUS_RECURSION">Anonymous recursion</a></li>
+            <li><a onclick="handleCloseNav()" href="#RECURSION_VERSUS_ITERATION">Recursion and iteration</a></li>
+            <li><a onclick="handleCloseNav()" href="#container-over">More information</a></li>
+        </ul>
+    </section>
+
+    <nav id="navbar">
+        <header>Recursion</header>
+        <ul>
+            <li><a class="nav-link" href="#INTRODUCTION_TO_RECURSION">Introduction</a></li>
+            <li><a class="nav-link" href="#RECURSIVE_FUNCTION_CALL">Recursive function</a></li>
+            <li><a class="nav-link" href="#STACK_LIMITATION">Stack size</a></li>
+            <li><a class="nav-link" href="#RECURSIVE_FUNCTIONS_AND_ALGORITHNS">Functions and algorithms</a></li>
+            <li><a class="nav-link" href="#BASE_CASE">Base case</a></li>
+            <li><a class="nav-link" href="#SINGLE_AND_MULTIPLE_RECURSION">Single/multiple recursion</a></li>
+            <li><a class="nav-link" href="#INDIRECT_RECURSION">Indirect Recursion</a></li>
+            <li><a class="nav-link" href="#ANONYMOUS_RECURSION">Anonymous recursion</a></li>
+            <li><a class="nav-link" href="#RECURSION_VERSUS_ITERATION">Recursion and iteration</a></li>
+            <li><a class="nav-link" href="#container-over">More information</a></li>
+        </ul>
+    </nav>
+
+
+    <main id="main-doc">
+        <section class="main-section" id="INTRODUCTION_TO_RECURSION">
+            <header class="subt">Introduction to Recursion</header>
+            <p class="content">The act of a function calling itself, recursion is used to solve problems
+                that contain smaller sub-problems.A recursive function can receive two
+                inputs: a base case (ends recursion) or a recursive case (resumes recursion).</p>
+        </section>
+
+        <section class="main-section" id="RECURSIVE_FUNCTION_CALL">
+            <header class="subt" id="title">Recursive function call</header>
+            <p class="content">The following Python code defines a function that takes a number, prints it, and then
+                calls itself again with the number's value -1. It keeps going until the number is
+                equal to 0, in which case it stops.</p>
+            <p class="content exercise"><code>&nbsp<span class="blue">def</span> <span class="red">recurse</span>(x): <br>
+                &nbsp &nbsp <span class="blue">if</span> x > <span class="green">0</span>:<br>
+                &nbsp &nbsp &nbsp &nbsp <span class="blue">print</span>(x) <br>
+                &nbsp &nbsp &nbsp &nbsp <span class="blue">recurse</span>(x - <span class="green">1</span>) <br><br>
+
+                &nbsp recurse(10)</code></p>
+            <p class="content">The output will look like this: <br><br>
+
+                10 9 8 7 6 5 4 3 2 1</p>
+        </section>
+
+        <section class="main-section" id="STACK_LIMITATION">
+            <header class="subt title" >Stack limitation</header>
+            <p class="content">The following code defines a function that returns the maximum size
+                of the call stack available in the JavaScript runtime in which the
+                code is run.</p>
+            <p class="content exercise"><span class="blue"><code>const</span> <span class="red">getMaxCallStackSize</span> =
+                (i)
+                => { <br>
+                &nbsp<span class="blue">try</span> { <br>
+                &nbsp<span class="blue">return</span> <span class="red">getMaxCallStackSize</span>(++i);<br>
+                &nbsp} <span class="blue">catch</span> { <br>
+                &nbsp &nbsp<span class="blue">return</span> i; <br>
+                &nbsp} <br>
+                }; <br>
+
+                console.<span class="red">log</span>(<span class="red">getMaxCallStackSize</span>(0));</code></p>
+        </section>
+
+        <section class="main-section" id="RECURSIVE_FUNCTIONS_AND_ALGORITHNS">
+            <header class="subt title" >Recursive functions and algorithms</header>
+            <p class="content">A common algorithm design tactic is to divide a problem into sub-problems of the
+                same type as the original, solve those sub-problems, and combine the results.
+                This is often referred to as the divide-and-conquer method; when combined with
+                a lookup table that stores the results of previously solved sub-problems
+                (to avoid solving them repeatedly and incurring extra computation time),
+                it can be referred to as dynamic programming or memoization.</p>
+
+            <h4 class="subt title" id="BASE_CASE">Base case</h4>
+            <p class="content">A recursive function definition has one or more base cases,
+                meaning input(s) for which the function produces a result trivially
+                (without recurring), and one or more recursive cases, meaning input(s)
+                for which the program recurs (calls itself). For example, the factorial
+                function can be defined recursively by the equations 0! = 1 and, for all n > 0,
+                n! = n(n - 1)!. Neither equation by itself constitutes a complete definition;
+                the first is the base case, and the second is the recursive case. Because the
+                base case breaks the chain of recursion, it is sometimes also called the
+                "terminating case".</p>
+        </section>
+
+        <section class="main-section" id="SINGLE_AND_MULTIPLE_RECURSION">
+            <header class="subt title" >Single recursion and multiple recursion</header>
+            <p class="content">Recursion that contains only a single self-reference is known as <b>single
+                    recursion</b>, while recursion that contains multiple self-references is known
+                as <b>multiple recursion</b>. Standard examples of single recursion include list
+                traversal, such as in a linear search, or computing the factorial function,
+                while standard examples of multiple recursion include tree traversal, such as
+                in a depth-first search.</p>
+        </section>
+
+        <section class="main-section" id="INDIRECT_RECURSION">
+            <header class="subt title" >Indirect recursion</header>
+            <p class="content">Most basic examples of recursion, and most of the examples presented
+                here, demonstrate direct recursion, in which a function calls itself. Indirect
+                recursion occurs when a function is called not by itself but by another function
+                that it called (either directly or indirectly). For example, if f calls f, that
+                is direct recursion, but if f calls g which calls f, then that is indirect
+                recursion of f. Chains of three or more functions are possible; for example,
+                function 1 calls function 2, function 2 calls function 3, and function 3 calls
+                function 1 again.</p>
+
+            <p class="content">Indirect recursion is also called mutual recursion, which is a
+                more symmetric term, though this is simply a difference of emphasis, not a
+                different notion. That is, if f calls g and then g calls f, which in turn calls
+                g again, from the point of view of f alone, f is indirectly recursing, while
+                from the point of view of g alone, it is indirectly recursing, while from the
+                point of view of both, f and g are mutually recursing on each other. Similarly a
+                set of three or more functions that call each other can be called a set of
+                mutually recursive functions.</p>
+        </section>
+
+        <section class="main-section" id="ANONYMOUS_RECURSION">
+            <header class="subt title" >Anonymous recursion</header>
+            <p class="content">Recursion is usually done by explicitly calling a function by name.
+                However, recursion can also be done via implicitly calling a function based on the
+                current context, which is particularly useful for anonymous functions, and is known
+                as anonymous recursion.</p>
+
+        </section>
+
+        <section class="main-section" id="RECURSION_VERSUS_ITERATION">
+            <header class="subt title">Recursion versus iteration</header>
+            <p class="content">Recursion and iteration are equally expressive: recursion can be
+                replaced by iteration with an explicit call stack, while iteration can be replaced
+                with tail recursion. Which approach is preferable depends on the problem under
+                consideration and the language used. In imperative programming, iteration is
+                preferred, particularly for simple recursion, as it avoids the overhead of function
+                calls and call stack management, but recursion is generally used for multiple
+                recursion. By contrast, in functional languages recursion is preferred, with tail
+                recursion optimization leading to little overhead. Implementing an algorithm using
+                iteration may not be easily achievable.</p>
+            <p class="content exercise"><code>function recursive(n)<br>
+                &nbsp if n == base <br>
+                &nbsp &nbsp return xbase <br>
+                &nbsp &nbsp &nbsp else <br>
+                &nbsp &nbsp &nbsp &nbsp return f(n, recursive(n-1))</code></p>
+            <br>
+            <p class="content exercise"><code>function iterative(n) <br>
+                &nbsp x = xbase <br>
+                &nbsp for i = base+1 to n <br>
+                &nbsp &nbsp x = f(i, x) <br>
+                &nbsp &nbsp &nbsp return x</code></p>
+        </section>
+    </main>
+
+    <footer>
+        <div id="container-over">
+            <p id="creator"><code>Mike01's Project</code></p>
+            <div id="social_footer">
+                <a href="https://www.facebook.com/maikel.iriarte.5/" target="_blank"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.freecodecamp.org/Mike01" target="_blank"><i
+                        class="fa-brands fa-free-code-camp"></i></a>
+            </div>
+
+        </div>
+        <diV id="description_container">
+            <div id="description">
+                <h5>About The creator</h5>
+                <p>This is the documentation page I have created for the responsive web design Certification in
+                    Freecodecamp.
+                    I started this journey of becoming a software developer many years ago, when I was 17 years old, but
+                    the lack of resources and the bad economy in my country did not allow me to do it. Nonetheless, I've
+                    taken
+                    it back with faith and a new opportunity. In october I discovered the Freecodecamp website and its
+                    youtube channel
+                    and at first I couldn't beleive it. Since then I've been taking all of its courses and now I am
+                    building the
+                    responsive web design certification projects.
+                </p>
+            </div>
+            <div></div>
+            <div id="resources">
+                <p>Resources</p>
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)" target="_blank">MDN Web
+                            Docs</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)"
+                            target="_blank">Wikipedia</a></li>
+                    <li><a href="https://www.programiz.com/javascript/recursion" target="_blank">Programiz</a></li>
+                </ul>
+            </div>
+            <div id="more">
+                <p>More</p>
+                <ul>
+                    <li><a href="https://www.freecodecamp.org/learn/" target="_blank">FreeCodeCamp</a></li>
+                    <li><a href="https://www.youtube.com/c/Freecodecamp" target="_blank">Youtube Channel</a></li>
+                    <li><a href="https://forum.freecodecamp.org/" target="_blank">FCC Forum</a></li>
+                </ul>
+
+            </div>
+            <div></div>
+        </diV>
+    </footer>
+    <script>
+        const sidebarLinks = document.querySelectorAll("#sidebar a");
+        const navCheckBox = document.querySelector("#check");
+
+        function handleCloseNav() {
+            navCheckBox.checked = '';
+        }
+        sidebarLinks.forEach((link) => {
+            link.addEventListener("click", handleCloseNav);
+        });
+    </script>
+
+</body>
+
+</html>
