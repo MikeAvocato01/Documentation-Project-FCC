@@ -4,6 +4,8 @@ Documentation project created for the Responsive Web Design Certification of Fre
 Here we can find concepts related to recursion in programing. 
 
 ## Technologies Used: 
-+ Html.
-+ CSS. 
-+ Javascript. 
++ Html: Common use of Html for creating an accessible layout of the page.
+
++ CSS: Visual style for light and dark mode.
+
++ Javascript: Script for creating a sidebar that hides on phone version and show up when we click on the list item icon.
