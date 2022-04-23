@@ -8,4 +8,4 @@ Here we can find concepts related to recursion in programing.
 
 + CSS: Visual style for light and dark mode.
 
-+ Javascript: Script for creating a sidebar that hides on phone version and show up when we click on the list item icon.
++ Javascript: Script for creating a sidebar that hides on phone version and shows up when we click on the list item icon.
