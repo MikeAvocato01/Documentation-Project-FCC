@@ -1,7 +1,7 @@
 # Documentation-Project-FCC
 Documentation project created for the Responsive Web Design Certification of FreeCodeCamp!
 
-Here we can find concepts related to recursion in programing. 
+Here we can find concepts related to recursion in programming. 
 
 ## Technologies Used: 
 + Html: Common use of Html for creating an accessible layout of the page.
